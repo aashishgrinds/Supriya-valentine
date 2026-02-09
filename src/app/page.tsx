@@ -6,12 +6,20 @@ import PhotoPairGame from "../components/PhotoPairGame";
 import ValentinesProposal from "@/components/ValentinesProposal";
 import TextFooter from "@/components/TextFooter";
 import OrientationGuard from "@/components/OrientationGuard";
+import LoveCheckQuiz from "@/components/LoveCheckQuiz";
 
 const ANIM_DURATION = 2;
 
 export default function Home() {
   const [showValentinesProposal, setShowValentinesProposal] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showLoveCheck, setShowLoveCheck] = useState(true);
+  const [showGame, setShowGame] = useState(false);
+
+  const handleLoveCheckComplete = () => {
+    setShowLoveCheck(false);
+    setShowGame(true);
+  };
 
   const handleShowProposal = () => {
     setIsTransitioning(true);
@@ -23,7 +31,9 @@ export default function Home() {
   return (
     <OrientationGuard>
       <main className="flex items-center justify-center min-h-screen bg-black overflow-hidden relative">
-        {!showValentinesProposal ? (
+        {showLoveCheck ? (
+          <LoveCheckQuiz onComplete={handleLoveCheckComplete} />
+        ) : showGame && !showValentinesProposal ? (
           <motion.div
             initial={{ opacity: 1 }}
             animate={{ opacity: isTransitioning ? 0 : 1 }}
