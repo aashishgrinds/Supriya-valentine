@@ -86,10 +86,10 @@ const LoveCheckQuiz = ({ onComplete }: LoveCheckQuizProps) => {
             </motion.div>
 
             <div className="space-y-2">
-              <p className="text-primary text-sm font-medium tracking-widest uppercase">
+              <p className="text-primary/80 text-sm font-medium tracking-widest uppercase">
                 A Little Love Check
               </p>
-              <h1 className="text-2xl font-bold text-foreground">
+              <h1 className="text-2xl font-bold text-foreground/90">
                 Answer to unlock our story 💕
               </h1>
             </div>
@@ -106,7 +106,7 @@ const LoveCheckQuiz = ({ onComplete }: LoveCheckQuizProps) => {
               >
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <label className="text-lg font-medium text-foreground block text-center">
+                    <label className="text-lg font-medium text-foreground/90 block text-center">
                       {question.question}
                     </label>
                     <Input
