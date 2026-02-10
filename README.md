@@ -1,115 +1,115 @@
-# Valentine's Memory Game Proposal 💝
+# Supriya Valentine 💝
 
-A romantic and interactive way to ask your special someone to be your Valentine! This web application features a memory card game in a heart shape, where matching all pairs reveals a special Valentine's proposal with cute animations and effects.
+A custom, romantic web app to ask your special someone to be your Valentine.  
+Your partner first answers a small **love check quiz**, then plays a **heart‑shaped memory game**; when all photo pairs are matched, a surprise proposal screen with cute animations is revealed.
 
-![Demo Preview](public/github-demo.gif)
+![Game preview](public/github-demo.gif)
+
+---
 
 ## Demo 🎮
 
-You can see the live demo of the game [here](https://valentines-proposal-visibait.vercel.app).
+- Deployed URL (Vercel or similar): _add your link here once deployed_
+
+---
 
 ## Features ✨
 
-- Interactive memory card game in a heart shape layout
-- Beautiful animations and transitions using Framer Motion
-- Customizable with your own photos
-- Romantic proposal screen with:
-  - Fireworks animation on acceptance
-  - Playful "No" button that moves away when hovered
-  - Cute hamster GIFs and images
-- Elegant design with Playfair Display font
-- Fully responsive layout
-- Built with Next.js and Tailwind CSS
+- **Love Check Quiz** – short, custom questions that must be answered before the game unlocks (`src/components/LoveCheckQuiz.tsx`).
+- **Heart‑shaped memory game** – 36 cards laid out as a heart, using your own photos (`src/components/PhotoPairGame.tsx`).
+- **Photo‑based proposal screen** – a final view with:
+  - Fireworks animation on “Yes”
+  - A playful “No” button that runs away
+  - Cute hamster images and GIFs
+- **Romantic copy + typography** – Playfair Display headings and soft dark theme.
+- **Background photo behind the game** – easily swap in one of your own pictures.
+- Built with **Next.js App Router**, **React**, **Tailwind CSS**, **Framer Motion**, and **Fireworks.js**.
 
-## Prerequisites 📋
-
-- Node.js (v18.18.0 or higher)
-- npm or yarn
-- Git
+---
 
 ## Getting Started 🚀
 
-1. Clone the repository:
-```bash
-git clone https://github.com/visibait/valentines.git
-cd valentines
-```
+### 1. Clone and install
 
-2. Install dependencies:
 ```bash
+git clone https://github.com/aashishgrinds/Supriya-valentine.git
+cd Supriya-valentine
+
 npm install
 # or
 yarn install
 ```
 
-3. Replace the photos:
-   - Navigate to the `public/game-photos` directory
-   - Replace the existing images (1.avif through 36.avif) with your own photos
-   - Make sure to keep the same naming convention
-   - Use photos of you and your partner together!
+### 2. Run the dev server
 
-4. Start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+Then open `http://localhost:3000` in your browser.
+
+> Recommended: Node.js **18.18+**.
+
+---
 
 ## Customization 🎨
 
-### Changing Photos
-- Add your photos to `public/game-photos/`
-- Name them from 1.avif to 36.avif
-- For best results, use square images of the same size
-- Convert your images to .avif format for better performance
+### Photos for the memory game
 
-### Modifying Text
-- Edit proposal messages in `components/ValentinesProposal.tsx`
-- Change game instructions in `components/TextFooter.tsx`
+- Add your own images to `public/game-photos/`.
+- Replace `1.avif` through `36.avif` with your photos (keep the same names).
+- For best results, use square images of similar size; `.avif` works great for performance.
+
+### Quiz questions
+
+- Edit the quiz configuration in `src/components/LoveCheckQuiz.tsx` (`QUIZ_CONFIG.questions`).
+- Change the questions, placeholders, and correct answers to match your story.
+
+### Proposal text and behaviour
+
+- Update the copy and behavior in `src/components/ValentinesProposal.tsx`:
+  - Headings and messages for each step.
+  - Fireworks behavior when “Yes” is clicked.
+  - Any extra images or inside jokes you want to show.
+
+### Heart screen text
+
+- Edit the bottom‑screen prompts in `src/components/TextFooter.tsx`  
+  (e.g., “Match the photo pairs / to reveal the surprise”).
+
+### Background image for the pair game
+
+- The faded background photo for the game view is controlled in `src/app/page.tsx`:
+  - `--bg-image`: points at an image under `public/` (for example `"/game-photos/1.avif"`).
+  - `--bg-opacity`: tweak between `0` and `0.3` for how strong the image appears.
 
 ### Styling
-- The project uses Tailwind CSS for styling
-- Modify colors, fonts, and other styles in the respective component files
-- Main color schemes can be adjusted in `tailwind.config.js`
+
+- Global theme tokens and quiz styling live in:
+  - `src/app/globals.css` (`.love-theme` and helpers).
+  - Tailwind config: `tailwind.config.ts`.
+- You can safely adjust colors, radii, and shadows to make the experience match your vibe.
+
+---
+
+## Project Structure 🗂
+
+- `src/app/page.tsx` – main flow: quiz → game → proposal.
+- `src/components/LoveCheckQuiz.tsx` – intro quiz logic and layout.
+- `src/components/PhotoPairGame.tsx` – memory game grid and matching logic.
+- `src/components/ValentinesProposal.tsx` – final proposal steps, fireworks, and hamster fun.
+- `src/components/TextFooter.tsx` – instructional text along the bottom of the game screen.
+- `public/game-photos/` – all memory‑game photos.
+
+---
 
 ## Tech Stack 💻
 
 - [Next.js](https://nextjs.org/)
-- [React](https://reactjs.org/)
+- [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Fireworks.js](https://fireworks.js.org/)
 
-## Contributing 🤝
-
-Contributions are welcome! Feel free to submit issues and enhancement requests.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License 📄
-
-This project is licensed under the MIT License.
-
-## Acknowledgments 🙏
-
-- Inspired by love and creativity
-- Built with Next.js 15 App Router
-
-## Author ✍️
-
-visibait - [https://visibait.com]
-
-## Donate
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/visibait)
-
----
-
-Made with ❤️ for my Valentine
-
-*Note: This project is meant for romantic purposes. Please use responsibly and spread love!*
