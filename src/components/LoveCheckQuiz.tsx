@@ -21,7 +21,7 @@ const QUIZ_CONFIG = {
     },
     {
       question: "When did we officially started dating? (YY/MM/DD) => English date",
-      placeholder: "YY/MM/DD",
+      placeholder: "YYYY/MM/DD",
       answer: "2022/10/03",
       type: "text" as const,
     },
@@ -90,7 +90,7 @@ const LoveCheckQuiz = ({ onComplete }: LoveCheckQuizProps) => {
                 A Little Love Check
               </p>
               <h1 className="text-2xl font-bold text-foreground/90">
-                Answer to unlock our story 💕
+                Answer to proceed hehehe 💕
               </h1>
             </div>
           </CardHeader>
