@@ -176,7 +176,7 @@ export default function ValentinesProposal() {
             exit={{ opacity: 0 }}
           >
             Hurraaaaayyyyyyyyyyyyyyyyyyy, I love you sooooo muchhhhh! 💕
-            <p className="text-sm mt-4">For more information, write me!!! 💌</p>
+            <p className="text-sm mt-4">I wanna spend my whole life with you</p>
             <Image
               src="/hamster_jumping.gif"
               alt="Hamster Feliz"
