@@ -14,19 +14,19 @@ interface LoveCheckQuizProps {
 const QUIZ_CONFIG = {
   questions: [
     {
-      question: "What's my favorite color?",
+      question: "What's my nickname from my beloved wife?",
       placeholder: "Enter your answer...",
-      answer: "blue",
+      answer: "Puku",
       type: "text" as const,
     },
     {
-      question: "What's our anniversary date? (DD/MM)",
-      placeholder: "DD/MM",
-      answer: "14/02",
+      question: "When did we officially started dating? (YY/MM/DD) => English date",
+      placeholder: "YY/MM/DD",
+      answer: "2022/10/03",
       type: "text" as const,
     },
   ],
-  wrongAnswerMessage: "Hmm... that doesn't seem right. Try again! 💕",
+  wrongAnswerMessage: "Hmm... Milena milena ferii try gara!💕",
 };
 
 const LoveCheckQuiz = ({ onComplete }: LoveCheckQuizProps) => {
@@ -171,3 +171,4 @@ const LoveCheckQuiz = ({ onComplete }: LoveCheckQuizProps) => {
 };
 
 export default LoveCheckQuiz;
+

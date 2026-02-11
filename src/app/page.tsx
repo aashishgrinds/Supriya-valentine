@@ -30,21 +30,7 @@ export default function Home() {
 
   return (
     <OrientationGuard>
-      <main
-        className={`flex items-center justify-center min-h-screen bg-black overflow-hidden relative ${
-          showGame && !showValentinesProposal ? "bg-image-overlay" : ""
-        }`}
-        style={
-          showGame && !showValentinesProposal
-            ? ({
-                // Put your image in `public/` and reference it like this:
-                // e.g. "/bg.jpg" or "/game-photos/1.avif"
-                ["--bg-image" as any]: `url("/game-photos/1.avif")`,
-                ["--bg-opacity" as any]: 0.12, // 0 = invisible, 1 = fully visible
-              } as React.CSSProperties)
-            : undefined
-        }
-      >
+      <main className="flex items-center justify-center min-h-screen bg-black overflow-hidden relative">
         {showLoveCheck ? (
           <LoveCheckQuiz onComplete={handleLoveCheckComplete} />
         ) : showGame && !showValentinesProposal ? (
