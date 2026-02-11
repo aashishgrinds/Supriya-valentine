@@ -17,6 +17,7 @@ export default function Home() {
 
   const handleLoveCheckComplete = () => {
     setShowLoveCheck(false);
+    // Back to normal flow: show the photo pair game after quiz
     setShowGame(true);
   };
 

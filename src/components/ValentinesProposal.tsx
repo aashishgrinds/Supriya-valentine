@@ -81,6 +81,22 @@ export default function ValentinesProposal() {
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen w-full px-4 py-8 overflow-hidden">
+      {/* Full-page background grid only on the final question step */}
+      {step === 2 && (
+        <div className="pointer-events-none absolute inset-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 opacity-10">
+          {images.slice(0, 36).map((src, index) => (
+            <div key={index} className="relative h-full">
+              <Image
+                src={src}
+                alt={`Memory ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
       <AnimatePresence mode="wait">
         {step === 0 && (
           <motion.h2
@@ -113,22 +129,8 @@ export default function ValentinesProposal() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative flex flex-col items-center text-center px-2 sm:px-4"
+            className="relative z-10 flex flex-col items-center text-center px-2 sm:px-4"
           >
-            {/* Image Grid Background */}
-            <div className="absolute inset-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 opacity-10 -z-10">
-              {images.slice(0, 36).map((src, index) => (
-                <div key={index} className="relative h-full">
-                  <Image
-                    src={src}
-                    alt={`Memory ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-
             <h2
               className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 sm:mb-8 ${playfairDisplay.className}`}
             >

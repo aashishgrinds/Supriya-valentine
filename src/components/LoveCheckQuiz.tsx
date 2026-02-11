@@ -89,7 +89,7 @@ const LoveCheckQuiz = ({ onComplete }: LoveCheckQuizProps) => {
               <p className="text-primary/80 text-sm font-medium tracking-widest uppercase">
                 A Little Love Check
               </p>
-              <h1 className="text-2xl font-bold text-foreground/90">
+              <h1 className="text-xl sm:text-2xl font-bold text-foreground/90">
                 Answer to proceed hehehe 💕
               </h1>
             </div>
