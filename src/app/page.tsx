@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import PhotoPairGame from "../components/PhotoPairGame";
 import ValentinesProposal from "@/components/ValentinesProposal";
 import TextFooter from "@/components/TextFooter";
-import OrientationGuard from "@/components/OrientationGuard";
 import LoveCheckQuiz from "@/components/LoveCheckQuiz";
 
 const ANIM_DURATION = 2;
@@ -29,32 +28,31 @@ export default function Home() {
   };
 
   return (
-    <OrientationGuard>
-      <main className="flex items-center justify-center min-h-screen bg-black overflow-hidden relative">
-        {showLoveCheck ? (
-          <LoveCheckQuiz onComplete={handleLoveCheckComplete} />
-        ) : showGame && !showValentinesProposal ? (
-          <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: isTransitioning ? 0 : 1 }}
-            transition={{ duration: ANIM_DURATION }}
-            className="flex flex-col items-center"
-          >
-            <PhotoPairGame handleShowProposal={handleShowProposal} />
-            <div className="mt-4 md:mt-0">
-              <TextFooter />
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: ANIM_DURATION }}
-          >
-            <ValentinesProposal />
-          </motion.div>
-        )}
-      </main>
-    </OrientationGuard>
+    <main className="flex items-center justify-center min-h-screen bg-black overflow-hidden relative px-2 sm:px-4">
+      {showLoveCheck ? (
+        <LoveCheckQuiz onComplete={handleLoveCheckComplete} />
+      ) : showGame && !showValentinesProposal ? (
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: isTransitioning ? 0 : 1 }}
+          transition={{ duration: ANIM_DURATION }}
+          className="flex flex-col items-center w-full"
+        >
+          <PhotoPairGame handleShowProposal={handleShowProposal} />
+          <div className="mt-2 sm:mt-4 md:mt-0 w-full">
+            <TextFooter />
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: ANIM_DURATION }}
+          className="w-full flex items-center justify-center px-2 sm:px-4"
+        >
+          <ValentinesProposal />
+        </motion.div>
+      )}
+    </main>
   );
 }

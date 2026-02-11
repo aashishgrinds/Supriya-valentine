@@ -94,9 +94,9 @@ export default function PhotoPairGame({
   }, [matched, handleShowProposal]);
 
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full flex items-center justify-center px-2 py-6 sm:py-8 overflow-hidden">
       {/* Collage Background */}
-      <div className="absolute inset-0 grid grid-cols-6 opacity-5 -z-10">
+      <div className="absolute inset-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 opacity-5 -z-10">
         {images.slice(0, 36).map((src, index) => (
           <div key={`bg-${index}`} className="relative h-full">
             <Image
@@ -110,7 +110,7 @@ export default function PhotoPairGame({
         ))}
       </div>
 
-      <div className="grid grid-cols-9 gap-1 lg:gap-2 max-w-[95vw] mx-auto place-items-center relative z-10">
+      <div className="grid grid-cols-9 gap-1 sm:gap-1.5 md:gap-2 max-w-[100vw] sm:max-w-[95vw] mx-auto place-items-center relative z-10">
         {/* Image preload - hidden */}
         <div className="hidden">
           {images.map((image, i) => (
@@ -129,7 +129,7 @@ export default function PhotoPairGame({
         index !== null ? (
           <motion.div
             key={i}
-            className="w-[11vh] h-[11vh] lg:w-20 lg:h-20 relative cursor-pointer"
+            className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 relative cursor-pointer"
             whileHover={{ scale: 1.1 }}
             onClick={() => handleClick(index)}
             style={{ perspective: "1000px" }} // Add perspective for 3D effect
@@ -180,7 +180,10 @@ export default function PhotoPairGame({
             )}
           </motion.div>
         ) : (
-          <div key={i} className="w-[11vh] h-[11vh] lg:w-20 lg:h-20" />
+          <div
+            key={i}
+            className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16"
+          />
         ),
       )}
       </div>
