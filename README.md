@@ -1,73 +1,78 @@
 # Supriya Valentine 💝
 
-A custom, romantic web app to ask your special someone to be your Valentine.  
-Your partner first answers a small **love check quiz**, then plays a **heart‑shaped memory game**; when all photo pairs are matched, a surprise proposal screen with cute animations is revealed.
-
-![Game preview](public/github-demo.gif)
-
----
-
-## Demo 🎮
-
-- Deployed URL (Vercel or similar): _add your link here once deployed_
-
----
+A romantic web app to ask your special someone to be your Valentine.  
+Your partner answers a **love check quiz**, then plays a **heart-shaped memory game** with your photos. When all pairs are matched, a beautiful proposal screen with animations is revealed.
 
 ## Features ✨
 
-- **Love Check Quiz** – short, custom questions that must be answered before the game unlocks (`src/components/LoveCheckQuiz.tsx`).
-- **Heart‑shaped memory game** – 36 cards laid out as a heart, using your own photos (`src/components/PhotoPairGame.tsx`).
-- **Photo‑based proposal screen** – a final view with:
-  - Fireworks animation on “Yes”
-  - A playful “No” button that runs away
-  - Cute hamster images and GIFs
-- **Romantic copy + typography** – Playfair Display headings and soft dark theme.
-- **Background photo behind the game** – easily swap in one of your own pictures.
-- Built with **Next.js App Router**, **React**, **Tailwind CSS**, **Framer Motion**, and **Fireworks.js**.
+- **Love Check Quiz** - Custom questions that must be answered correctly to proceed
+- **Heart-shaped Memory Game** - 36 cards (18 pairs) arranged in a heart shape
+- **Photo Collage Background** - Beautiful grid of your photos as a subtle background
+- **Animated Proposal** - Interactive proposal with smooth animations
+- **Responsive Design** - Works on both desktop and mobile devices
 
----
+## Technologies Used
+
+- ⚛️ Next.js 14 with App Router
+- 🎨 Tailwind CSS for styling
+- 🎭 Framer Motion for animations
+- 🖼️ Next.js Image Optimization
+- 🔥 Fireworks animation
 
 ## Getting Started 🚀
 
-### 1. Clone and install
+### Prerequisites
 
-```bash
-git clone https://github.com/aashishgrinds/Supriya-valentine.git
-cd Supriya-valentine
+- Node.js 18.0.0 or later
+- npm or yarn
 
-npm install
-# or
-yarn install
-```
+### Installation
 
-### 2. Run the dev server
+1. Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+   ```bash
+   git clone https://github.com/aashishgrinds/Supriya-valentine.git
+   cd Supriya-valentine
+   ```
 
-Then open `http://localhost:3000` in your browser.
+2. Install dependencies:
 
-> Recommended: Node.js **18.18+**.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
----
+3. Add your photos to the `public/game-photos` directory (name them 1.jpeg, 2.jpeg, etc.)
 
-## Customization 🎨
+4. Run the development server:
 
-### Photos for the memory game
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-- Add your own images to `public/game-photos/`.
-- Replace `1.avif` through `36.avif` with your photos (keep the same names).
-- For best results, use square images of similar size; `.avif` works great for performance.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### Quiz questions
+## Customization
 
-- Edit the quiz configuration in `src/components/LoveCheckQuiz.tsx` (`QUIZ_CONFIG.questions`).
-- Change the questions, placeholders, and correct answers to match your story.
+- Update questions in `src/components/LoveCheckQuiz.tsx`
+- Modify the heart layout in `src/components/PhotoPairGame.tsx`
+- Adjust animations and timings as needed
+- Update the proposal text in `src/components/ValentinesProposal.tsx`
 
-### Proposal text and behaviour
+## How It Works
+
+1. User answers quiz questions
+2. Upon successful completion, the memory game starts
+3. User matches photo pairs in a heart-shaped grid
+4. When all pairs are matched, the proposal is revealed
+5. User can accept or reject the proposal (with a fun animation)
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 - Update the copy and behavior in `src/components/ValentinesProposal.tsx`:
   - Headings and messages for each step.
@@ -112,4 +117,3 @@ Then open `http://localhost:3000` in your browser.
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Fireworks.js](https://fireworks.js.org/)
-
